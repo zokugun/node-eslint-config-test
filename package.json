@@ -55,6 +55,7 @@
 		"watch:src": "tsc-watch -p src"
 	},
 	"dependencies": {
+		"@zokugun/eslint-config-ts": "0.1.0",
 		"@zokugun/eslint-toolkit": "0.1.1",
 		"eslint-plugin-chai-friendly": "1.2.1"
 	},
@@ -62,7 +63,6 @@
 		"@commitlint/cli": "20.5.3",
 		"@commitlint/config-conventional": "20.5.3",
 		"@types/node": "24.13.2",
-		"@zokugun/eslint-config-ts": "file:../node-eslint-config-ts",
 		"@zokugun/eslint-typegen-plus": "0.1.0",
 		"@zokugun/tsc-leda": "0.6.0",
 		"eslint": "10.8.1",
