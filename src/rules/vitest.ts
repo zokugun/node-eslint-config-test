@@ -1,10 +1,10 @@
 import type { TypeScriptRuleOptions } from '@zokugun/eslint-config-ts';
 import type { CommonsRuleOptions } from '@zokugun/eslint-toolkit';
-import type { RuleOptions as ChaiRuleOptions } from '../typegens/chai.js';
+import type { ChaiRuleOptions } from '../typegens/chai.js';
 
 export type VitestRuleOptions = ChaiRuleOptions | CommonsRuleOptions | TypeScriptRuleOptions;
 
-export const rules: Partial<VitestRuleOptions> = {
+export const vitestRules: Partial<VitestRuleOptions> = {
 	'ts/explicit-function-return-type': [
 		'off',
 	],

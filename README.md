@@ -41,8 +41,8 @@ API reference
 -------------
 
 ```typescript
-function mocha(options?: OptionRules<MochaRuleOptions> & OptionFiles & OptionIgnores & OptionOverridesFiles & OptionOverridesIgnores): Configurator;
-function vitest(options?: OptionRules<VitestRuleOptions> & OptionFiles & OptionIgnores & OptionOverridesFiles & OptionOverridesIgnores): Configurator;
+function mocha(options?: DefaultOptions<MochaRuleOptions>): Configurator;
+function vitest(options?: DefaultOptions<VitestRuleOptions>): Configurator;
 ```
 
 Contributions

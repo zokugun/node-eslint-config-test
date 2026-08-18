@@ -1,18 +1,22 @@
-import type { Configurator, OptionFiles, OptionIgnores, OptionOverridesFiles, OptionOverridesIgnores, OptionRules } from '@zokugun/eslint-toolkit';
+import type { Configurator, DefaultOptions } from '@zokugun/eslint-toolkit';
+import type { MochaRuleOptions } from './rules/mocha.js';
 
 import plugin from 'eslint-plugin-chai-friendly';
 
-import { type MochaRuleOptions, rules } from './rules/mocha.js';
+import { mochaRules } from './rules/mocha.js';
 
-type Options = OptionRules<MochaRuleOptions> & OptionFiles & OptionIgnores & OptionOverridesFiles & OptionOverridesIgnores;
-
-export function mocha(options: Options = {}): Configurator {
+export function mocha(options: DefaultOptions<MochaRuleOptions> = {}): Configurator {
 	const files = options.overrides?.files ?? [
 		'test/**/*.test.?([cm])ts',
 		...(options.files ?? []),
 	];
 
 	const ignores = options.overrides?.ignores ?? options.ignores ?? [];
+
+	const rules = options.overrides?.rules ?? {
+		...mochaRules,
+		...options.rules,
+	};
 
 	return () => ({
 		name: 'zokugun/mocha/rules',
@@ -31,9 +35,6 @@ export function mocha(options: Options = {}): Configurator {
 				'it': 'readonly',
 			},
 		},
-		rules: {
-			...rules,
-			...options.rules,
-		},
+		rules,
 	});
 }

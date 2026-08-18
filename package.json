@@ -55,15 +55,15 @@
 		"watch:src": "tsc-watch -p src"
 	},
 	"dependencies": {
-		"@zokugun/eslint-config-ts": "0.1.0",
-		"@zokugun/eslint-toolkit": "0.1.1",
+		"@zokugun/eslint-toolkit": "0.3.0",
 		"eslint-plugin-chai-friendly": "1.2.1"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "20.5.3",
 		"@commitlint/config-conventional": "20.5.3",
 		"@types/node": "24.13.2",
-		"@zokugun/eslint-typegen-plus": "0.1.0",
+		"@zokugun/eslint-config-ts": "0.3.0",
+		"@zokugun/eslint-typegen-plus": "0.3.0",
 		"@zokugun/tsc-leda": "0.6.0",
 		"eslint": "10.8.1",
 		"fixpack": "4.0.0",
@@ -76,7 +76,7 @@
 		"typescript": "5.9.3"
 	},
 	"peerDependencies": {
-		"@zokugun/eslint-config-ts": "*"
+		"@zokugun/eslint-config-ts": ">= 0.3.0"
 	},
 	"overrides": {
 		"release-it": {
